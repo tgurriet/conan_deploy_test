@@ -13,7 +13,7 @@ conan export my_lib
 rm -rf deploy || true
 mkdir deploy
 cd deploy
-conan install --requires="my_lib/1.0" --generator=CMakeDeps --generator=CMakeToolchain --deployer=full_deploy --build="*"
+conan install --requires="my_lib/1.0" --generator=CMakeDeps --generator=CMakeToolchain --deployer=full_deploy --build="*" -s:h build_type=Debug -s:b build_type=Debug
 
 # Build my_app
 source conanbuild.sh
