@@ -27,7 +27,7 @@ class helloRecipe(ConanFile):
     generators = ["CMakeDeps", "CMakeToolchain"]
 
     def requirements(self):
-        self.requires("cpp-httplib/0.12.2")
+        self.requires("cpp-httplib/0.12.2", transitive_headers=True)
 
     def layout(self):
         cmake_layout(self)
