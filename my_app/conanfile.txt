@@ -1,0 +1,9 @@
+[requires]
+my_lib/1.0
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout
