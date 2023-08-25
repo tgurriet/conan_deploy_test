@@ -13,5 +13,6 @@ conan export my_lib
 cd my_app
 rm -rf build || true
 conan install . -s:h build_type=Debug -s:b build_type=Debug --build="*"
-cmake --preset conan-debug
-cmake --build --preset conan-debug
+cd build/Debug
+cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=generators/conan_toolchain.cmake
+cmake --build .
