@@ -21,13 +21,15 @@ class helloRecipe(ConanFile):
         "cpp-httplib/*:with_openssl": True,
     }
 
+    package_type = "static-library"
+
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "CMakeLists.txt", "src/*", "include/*"
 
     generators = ["CMakeDeps", "CMakeToolchain"]
 
     def requirements(self):
-        self.requires("cpp-httplib/0.12.2", transitive_headers=True)
+        self.requires("cpp-httplib/0.12.2")
 
     def layout(self):
         cmake_layout(self)
